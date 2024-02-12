@@ -3,12 +3,14 @@ Tutorial by Jake Moore
 Welcome to my Git Command Line Tutorial for Computer Science students! In this tutorial, you will learn the basics of using Git from the command line, focusing on key concepts like branches, stashes, and rebasing.
 ## Setup
 # Creating your directory
+In Git, directories (or folders) are an integral part of managing and organizing the files within a repository. 
 Create a directory using
 `mkdir simple_code`<br>`cd simple_code`
 # initialize the repository
 Turning the repository into a git repository will allow for the history to be tracked
 `git init`
 # set up the python virtual environment
+A Python virtual environment is a self-contained directory that contains its own Python interpreter and a set of libraries, allowing you to work on a Python project with dependencies that might be different from those in your system-wide Python installation.
 `python3 -m venv venv` then activate the environment with `source venv/bin/activate`
 # First script
 Lets create a simple program, you can use your own or follow allong with mine. I will create simpleMath.py and make it a simple addition function for now
@@ -21,7 +23,7 @@ Lets take the script and move it from the working tree(where we currently are) a
 `git commit -m "Initial commit: A simple addition function"`
 ## Branches
 # creating a branch
-Branches allow you to make changes that are isolated from the main code
+When you create a branch, you're creating a new line of development that allows you to isolate changes. The default branch in Git is typically named main or master, and this is where the latest stable code resides.
 `git checkout -b feature-multiplication`
 # Implementing multiplication
 Since multiplication is also simple math it is only right that we add it to our simpleMath.py
@@ -36,7 +38,8 @@ This will save our changes in a new branch
 Stashes are useful for saving work that you don't yet want to commit, such as work in progress.
 `git stash` to save your changes and `git stash pop` to resume
 # merging and merge conflict resolution
-to merge your branch back into the main branch use `git checkout main`
+In Git, merging is the process of combining changes from different branches. It's a common operation when working collaboratively or maintaining multiple lines of development. The primary goal is to integrate the changes seamlessly, preserving a linear history.
+Merge conflicts occur when Git is unable to automatically merge changes from different branches due to conflicting modifications in the same part of a file. This won't happen here so to merge your branch back into the main branch use `git checkout main`
 `git merge feature-multiplication`
 ## push github
 A remote repository is the 4th and final type of data store on git. The first 3 being working tree, staging area, and local repository.
